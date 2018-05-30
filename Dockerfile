@@ -1,12 +1,12 @@
 FROM debian:stable
-ARG VERSION=0.11.4
+ARG VERSION=0.11.43
 ENV USER=git
 RUN apt update && apt install --no-install-recommends git \
     wget \
     tar \
     openssh-client \
     ca-certificates -y && \
-    wget https://dl.gogs.io/${VERSION}/linux_amd64.tar.gz -O /tmp/gogs.tar.gz && \
+    wget https://dl.gogs.io/${VERSION}/gogs_${VERSION}_linux_amd64.tar.gz -O /tmp/gogs.tar.gz && \
     wget https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 -O /usr/local/bin/dumb-init && \
     useradd -r -m git -u 1000 && \
     chmod +x /usr/local/bin/dumb-init && \
