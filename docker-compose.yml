@@ -39,7 +39,8 @@ services:
      - data:/home/git/gogs-repositories
      - app:/home/git/gogs/custom
     ports:
-     - "22:2222"
+     - "2220:2220"
+     - "8080:80"
     depends_on:
      - gogsdb
 
